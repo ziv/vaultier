@@ -5,4 +5,5 @@ export declare class Vaultier {
     store(ns: NameSpace, vault: Vault): Promise<import("axios").AxiosResponse<boolean>>;
     fetch(ns: NameSpace): Promise<import("axios").AxiosResponse<Record<string, string>>>;
     flush(ns: NameSpace): Promise<import("axios").AxiosResponse<boolean>>;
+    isEmpty(ns: NameSpace): Promise<boolean>;
 }
