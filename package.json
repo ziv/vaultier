@@ -1,6 +1,6 @@
 {
   "name": "@xpr/vaultier",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Client for @xpr/vault",
   "main": "lib/index.js",
   "engines": {
