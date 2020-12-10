@@ -11,11 +11,11 @@ export class Vaultier {
     return axios.post<boolean>(`${this.base}/store/${ns}`, vault).then(toData);
   }
 
-  async fetch(ns: NameSpace) {
+  async fetch(ns: NameSpace): Promise<Vault> {
     return axios.get<Vault>(`${this.base}/fetch/${ns}`).then(toData)
   }
 
-  async flush(ns: NameSpace) {
+  async flush(ns: NameSpace): Promise<boolean> {
     return axios.delete<boolean>(`${this.base}/flush/${ns}`).then(toData);
   }
 
