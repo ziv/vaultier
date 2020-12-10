@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { NameSpace, Vault } from './types';
+import {NameSpace, Vault, vaultEmptyKey} from './types';
 
 export class Vaultier {
   constructor(public readonly base = 'http://localhost:3666') {
@@ -15,5 +15,10 @@ export class Vaultier {
 
   async flush(ns: NameSpace) {
     return axios.delete<boolean>(`${this.base}/flush/${ns}`);
+  }
+
+  async isEmpty(ns: NameSpace) {
+    const vault = await this.fetch(ns);
+    return vault[vaultEmptyKey] && vault[vaultEmptyKey] === '1';
   }
 }
